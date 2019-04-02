@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
+// USE THIS PAGE FOR GRAPHS? 
 namespace G00303598_PROJECT_19.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]

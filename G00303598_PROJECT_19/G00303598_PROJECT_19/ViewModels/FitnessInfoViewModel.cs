@@ -12,6 +12,12 @@ namespace G00303598_PROJECT_19
     public class FitnessInfoViewModel : BaseViewModel
     {
         #region Accessors + Mutators + Member variables
+        private string _dateToStore;
+        public string DateToStore
+        {
+            get { return _dateToStore; }
+            set { SetValue(ref _dateToStore, value); }
+        }
         private double _currentWeight;
         public double CurrentWeight
         {

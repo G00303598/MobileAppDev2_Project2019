@@ -45,6 +45,7 @@ namespace G00303598_PROJECT_19
         public ICommand SaveListCommand { get; private set; }
         public ICommand DeleteFromListCommand { get; private set; }
         // TODO: CLEAR + INSERT
+        public ICommand ResetListCommand { get; private set; }
         #endregion
 
         #region Public Events

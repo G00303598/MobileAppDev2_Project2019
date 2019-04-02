@@ -27,5 +27,17 @@ namespace G00303598_PROJECT_19
         {
             await (BindingContext as MainPageViewModel).SelectOneItemAsync(e.SelectedItem as FitnessInfoViewModel);
         }
+
+        private void BtnResetFields_Clicked(object sender, EventArgs e)
+        {
+            entCurrentWeight.Text = "";
+            entPreviousWeight.Text = "";
+            entGoalWeight.Text = "";
+            entCaloriesIn.Text = "";
+            entCaloriesInGoal.Text = "";
+            entWaterDrank.Text = "";
+            entDistanceRan.Text = "";
+            entComment.Text = "";
+        }
     }
 }

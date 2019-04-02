@@ -4,11 +4,207 @@
              xmlns:local="clr-namespace:G00303598_PROJECT_19"
              x:Class="G00303598_PROJECT_19.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    <!-- USE FOR TEMPLATES AND PRE-DESIGNED LAYOUT -->
+    <ContentPage.Resources>
+        <!--ENTRY STYLE-->
+        <Style x:Key="EntryStyle" TargetType="Entry">
+            <Setter Property="FontSize" Value="Default"/>
+            <Setter Property="TextColor" Value="Black"/>
+        </Style>
+        <!--BUTTON STYLE May not use-->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BackgroundColor" Value="LightBlue"/>
+        </Style>
+        
+        <!--DATA TEMPLATES-->
+        <DataTemplate x:Key="FitnessInfoListTemplate">
+            <ViewCell>
+                <!--ACTIONS-->
+                <ViewCell.ContextActions>
+                    <MenuItem Text="Delete" Clicked="DeleteContext_Clicked"
+                              CommandParameter="{Binding .}"
+                              IsDestructive="False"/>
+                    <!--SET TO TRUE WHEN READY!!-->
+                </ViewCell.ContextActions>
+                <!--DESIGN-->
+                <StackLayout Margin="2">
+                    <!--DATETOSTORE-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Date: "/>
+                        <Label Text="{Binding Path= DateToStore}"/>
+                    </StackLayout>
+                    <!--CURRENTWEIGHT-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Current Weight: "/>
+                        <Label Text="{Binding Path=CurrentWeight}"/>
+                    </StackLayout>
+                    <!--PREVIOUSWEIGHT-->             
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Previous Weight: "/>
+                        <Label Text="{Binding Path=PreviousWeight}"/>
+                    </StackLayout>
+                    <!--GOALWEIGHT-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Goal Weight: "/>
+                        <Label Text="{Binding Path=GoalWeight}"/>
+                    </StackLayout>
+                    <!--CALORIESIN-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Calories In: "/>
+                        <Label Text="{Binding Path=CaloriesIn}"/>
+                    </StackLayout>
+                    <!--CALORIESINGOAL-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Calories In GOAL: "/>
+                        <Label Text="{Binding Path=CaloriesInGoal}"/>
+                    </StackLayout>
+                    <!--WATERDRANK-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="water drank: "/>
+                        <Label Text="{Binding Path=WaterDrank}"/>
+                    </StackLayout>
+                    <!--DISTANCERAN-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Distance Ran: "/>
+                        <Label Text="{Binding Path=DistanceRan}"/>
+                    </StackLayout>
+                    <!--COMMENT-->
+                    <StackLayout Orientation="Horizontal" Margin="2,1">
+                        <Label Text="Comment about day: "/>
+                        <Label Text="{Binding Path=Comment}"/>
+                    </StackLayout>
+                </StackLayout>
+            </ViewCell>
+        </DataTemplate>
+    </ContentPage.Resources>
+    
+    <!-- MAIN GRID -->
+    <Grid>
+        <!--ROW DEFINITIONS-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <!--COL DEFINITIONS-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        
+        <!-- MAIN TITLE -->
+        <Label Text="Fitness App - Change This Title" HorizontalOptions="Center"
+               Margin="0,5" Grid.Row="0" Grid.Column="0"/>
+        
+        <!-- DISPLAY PREVIOUS ENTRIES -->
+        <ListView Margin="3,3,3,0"
+                  ItemsSource="{Binding FitnessInfoList, Mode=TwoWay}"
+                  SelectedItem="{Binding SelectedFitnessInfo, Mode=TwoWay}"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  ItemTemplate="{StaticResource FitnessInfoListTemplate}"
+                  HorizontalOptions="Center"/>
+        
+        <!--ENTRY LAYOUT-->
+        <StackLayout Grid.Row="2" Grid.Column="0"
+                     Margin="10" BindingContext="{Binding SelectedFitnessInfo}">
+            <!--NONEDIT-->
+            <StackLayout x:Name="slNonEditable">
+                <!--DATE-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Date: "/>
+                    <Entry x:Name="entDate"
+                           Text="{Binding Path = DateToStore}"
+                           HorizontalOptions="FillAndExpand"
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+            </StackLayout>
+            
+            <!--EDITABLE-->
+            <StackLayout x:Name="slEditable">
+                <!--CURRENTWEIGHT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Current Weight: " />
+                    <Entry x:Name="entCurrentWeight" 
+                           Text="{Binding Path= CurrentWeight}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+                <!--PREVIOUSWEIGHT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Previous Weight: " />
+                    <Entry x:Name="entPreviousWeight" 
+                           Text="{Binding Path=PreviousWeight}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+                <!--GOALWEIGHT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Goal Weight: " />
+                    <Entry x:Name="entGoalWeight" 
+                           Text="{Binding Path=GoalWeight}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+                <!--CALORIESIN-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Calories In: " />
+                    <Entry x:Name="entCaloriesIn" 
+                           Text="{Binding Path=CaloriesIn}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+                <!--CALORIESINGOAL-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Calories In Goal: " />
+                    <Entry x:Name="entCaloriesInGoal" 
+                           Text="{Binding Path=CaloriesInGoal}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+                <!--WATERDRANK-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Water Drank: " />
+                    <Entry x:Name="entWaterDrank" 
+                           Text="{Binding Path=WaterDrank}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+                <!--DISTANCERAN-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Distance Ran: " />
+                    <Entry x:Name="entDistanceRan" 
+                           Text="{Binding Path=DistanceRan}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+                <!--COMMENT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Comment: " />
+                    <Entry x:Name="entComment" 
+                           Text="{Binding Path=Comment}"
+                           HorizontalOptions="FillAndExpand" 
+                           Style="{StaticResource EntryStyle}"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <!--BUTTON LAYOUT-->
+        <StackLayout x:Name="slButtons" Orientation="Horizontal"
+            Grid.Row="3" Grid.Column="0" Margin="0,2">
+            <!--SAVE-->
+            <Button x:Name="btnSaveFile" Text="Save"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding SaveListCommand}"
+                    Margin="2"/>
+            <Button x:Name="btnDeleteSelected" Text="Delete"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding DeleteFromListCommand}"
+                    CommandParameter="{Binding SelectedFitnessInfo}"/>
+            
+            <Button x:Name="btnResetFields" Text="Clear Feilds"
+                    Clicked="BtnResetFields_Clicked"/>
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
