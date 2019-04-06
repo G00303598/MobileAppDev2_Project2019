@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.ComponentModel;
 
 namespace G00303598_PROJECT_19
 {
@@ -13,7 +14,6 @@ namespace G00303598_PROJECT_19
         public MainPage()
         {
             InitializeComponent();
-
             // Connection to MainPageViewModel class
             this.BindingContext = new MainPageViewModel(new PageService()); // Dependency injection
         }
@@ -31,6 +31,7 @@ namespace G00303598_PROJECT_19
 
         private void BtnResetFields_Clicked(object sender, EventArgs e)
         {
+            entDate.Text = "";
             entCurrentWeight.Text = "";
             entPreviousWeight.Text = "";
             entGoalWeight.Text = "";
@@ -39,6 +40,12 @@ namespace G00303598_PROJECT_19
             entWaterDrank.Text = "";
             entDistanceRan.Text = "";
             entComment.Text = "";
+        }
+
+        private void BtnSaveFile_Clicked(object sender, EventArgs e)
+        {
+            FitnessInfoViewModel fitnessEntry = (sender as MenuItem).CommandParameter as FitnessInfoViewModel;
+            (BindingContext as MainPageViewModel).SaveListCommand.Execute(fitnessEntry);
         }
     }
 }

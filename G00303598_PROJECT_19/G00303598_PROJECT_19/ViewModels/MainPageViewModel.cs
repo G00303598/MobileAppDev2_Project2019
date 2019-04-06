@@ -42,7 +42,7 @@ namespace G00303598_PROJECT_19
         public ICommand SaveListCommand { get; private set; }
         public ICommand DeleteFromListCommand { get; private set; }
         // TODO: CLEAR + INSERT
-        public ICommand ResetListCommand { get; private set; }
+        public ICommand AddToListCommand { get; private set; }
         #endregion
 
         #region Public Events
@@ -55,7 +55,8 @@ namespace G00303598_PROJECT_19
             ReadList();
             // Command Actions
             ReadListCommand = new Command(ReadList);
-            SaveListCommand = new Command<FitnessInfoViewModel>(SaveList);
+            AddToListCommand = new Command<FitnessInfoViewModel>(AddToList);
+            SaveListCommand = new Command(SaveList);
             DeleteFromListCommand = new Command<FitnessInfoViewModel>(DeleteOneEntry);
         }
 
@@ -65,11 +66,17 @@ namespace G00303598_PROJECT_19
             fitnessInfoList = FitnessInfoViewModel.ReadLocalFitnessData(); // Read list of fitness info
         }
 
-        public void SaveList(FitnessInfoViewModel item)
+        public void SaveList()
         {
-            fitnessInfoList.Add(item);
             // Writing obervable collection to file
             FitnessInfoViewModel.SaveLocaFitnessData(fitnessInfoList);
+        }
+
+        public void AddToList(FitnessInfoViewModel item)
+        {
+            // add an entry to the list
+            FitnessInfoViewModel fi = new FitnessInfoViewModel();
+            fitnessInfoList.Add(fi);
         }
 
         public void DeleteOneEntry(FitnessInfoViewModel item)

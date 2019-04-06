@@ -12,7 +12,7 @@ namespace G00303598_PROJECT_19
 {
     public class FitnessInfo : BaseViewModel
     {
-        #region Accessors + Mutators + Member 
+        #region Properties 
         public string DateToStore { get; set; }
         public double CurrentWeight { get; set; }
         public double PreviousWeight { get; set; }
@@ -43,9 +43,6 @@ namespace G00303598_PROJECT_19
             DistanceRan = distanceRan;
             Comment = comment;
         }
-        // 8 Param Constructor
-
-        // 8 Param Contructor
         #endregion
     }
 }

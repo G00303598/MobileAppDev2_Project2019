@@ -25,7 +25,8 @@
                     <MenuItem Text="Delete" Clicked="DeleteContext_Clicked"
                               CommandParameter="{Binding .}"
                               IsDestructive="False"/>
-                    <!--SET TO TRUE WHEN READY!!-->
+                    <MenuItem Text="Save" Clicked="BtnSaveFile_Clicked"
+                              CommandParameter="{Binding .}"/>
                 </ViewCell.ContextActions>
                 <!--DESIGN-->
                 <StackLayout Margin="2">
@@ -109,8 +110,9 @@
         <!--ENTRY LAYOUT-->
         <StackLayout Grid.Row="2" Grid.Column="0"
                      Margin="10" BindingContext="{Binding SelectedFitnessInfo}">
-            <!--NONEDIT-->
-            <StackLayout x:Name="slNonEditable">
+
+            <!--EDITABLE-->
+            <StackLayout x:Name="slEditable">
                 <!--DATE-->
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Date: "/>
@@ -119,10 +121,6 @@
                            HorizontalOptions="FillAndExpand"
                            Style="{StaticResource EntryStyle}"/>
                 </StackLayout>
-            </StackLayout>
-            
-            <!--EDITABLE-->
-            <StackLayout x:Name="slEditable">
                 <!--CURRENTWEIGHT-->
                 <StackLayout Orientation="Horizontal" >
                     <Label Text="Current Weight: " />
@@ -197,17 +195,19 @@
             <Button x:Name="btnSaveFile" Text="Save"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding SaveListCommand}"
-                    Margin="2"/>
+                    CommandParameter="{Binding SelectedFitnessInfo}"/>
             <!--DELETE-->
             <Button x:Name="btnDeleteSelected" Text="Delete"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding DeleteFromListCommand}"
                     CommandParameter="{Binding SelectedFitnessInfo}"/>
-            <!--ADD TO LIST-->
-            <Button x:Name="btnAddToList" Text="Input"
+
+            <Button x:Name="btnAddToList" Text="Create new entry"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding AddToListCommand}"
-                    Margin="2"/>
+                    CommandParameter="{Binding SelectedFitnessInfo}"/>
+
+
             <Button x:Name="btnResetFields" Text="Clear Feilds"
                     Clicked="BtnResetFields_Clicked"/>
         </StackLayout>
