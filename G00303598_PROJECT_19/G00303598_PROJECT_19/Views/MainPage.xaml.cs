@@ -14,6 +14,7 @@ namespace G00303598_PROJECT_19
         {
             InitializeComponent();
 
+            // Connection to MainPageViewModel class
             this.BindingContext = new MainPageViewModel(new PageService()); // Dependency injection
         }
 

@@ -20,17 +20,14 @@ namespace G00303598_PROJECT_19
     {
         #region Properties
         // Using an ObervableCollection as a way of holding data
-        // Private fields
         private ObservableCollection<FitnessInfoViewModel> fitnessInfoList;
-        private FitnessInfoViewModel selectedFitnessInfo;
-
-        // Public properties
         public ObservableCollection<FitnessInfoViewModel> FitnessInfoList
         {
             get { return fitnessInfoList; }
             set { SetValue(ref fitnessInfoList, value); }
         }
 
+        private FitnessInfoViewModel selectedFitnessInfo;
         public FitnessInfoViewModel SelectedFitnessInfo
         {
             get { return selectedFitnessInfo; }
@@ -58,7 +55,7 @@ namespace G00303598_PROJECT_19
             ReadList();
             // Command Actions
             ReadListCommand = new Command(ReadList);
-            SaveListCommand = new Command(SaveList);
+            SaveListCommand = new Command<FitnessInfoViewModel>(SaveList);
             DeleteFromListCommand = new Command<FitnessInfoViewModel>(DeleteOneEntry);
         }
 
@@ -68,8 +65,9 @@ namespace G00303598_PROJECT_19
             fitnessInfoList = FitnessInfoViewModel.ReadLocalFitnessData(); // Read list of fitness info
         }
 
-        public void SaveList()
+        public void SaveList(FitnessInfoViewModel item)
         {
+            fitnessInfoList.Add(item);
             // Writing obervable collection to file
             FitnessInfoViewModel.SaveLocaFitnessData(fitnessInfoList);
         }
@@ -85,7 +83,7 @@ namespace G00303598_PROJECT_19
         {
             if (fitnessInfoList == null)
                 return;
-            await _pageService.PushAsync(new FitnessDetailsPage(item)); // calling interface method
+            await _pageService.PushAsync(new FitnessDetailsPage(item));
         }
         #endregion
     }

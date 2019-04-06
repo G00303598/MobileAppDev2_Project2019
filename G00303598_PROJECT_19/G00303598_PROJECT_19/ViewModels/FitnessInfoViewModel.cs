@@ -75,6 +75,7 @@ namespace G00303598_PROJECT_19
         }
         #endregion
 
+  
         #region File IO
         public static ObservableCollection<FitnessInfoViewModel> ReadLocalFitnessData()
         {
@@ -128,6 +129,7 @@ namespace G00303598_PROJECT_19
             string path = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
 
             // File name
+            // Break point here to find file location
             string fileName = Path.Combine(path, MyUtilites.FITNESS_OUTPUT_SAVE_FILE);
 
             // Stream writer --> False: Always overwrite file
@@ -138,6 +140,8 @@ namespace G00303598_PROJECT_19
 
                 // Write to file
                 writer.WriteLine(stringifiedText);
+
+                writer.Close();
             }
         }
         #endregion

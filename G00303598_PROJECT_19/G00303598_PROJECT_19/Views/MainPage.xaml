@@ -176,6 +176,7 @@
                     <Label Text="Distance Ran: " />
                     <Entry x:Name="entDistanceRan" 
                            Text="{Binding Path=DistanceRan}"
+                           
                            HorizontalOptions="FillAndExpand" 
                            Style="{StaticResource EntryStyle}"/>
                 </StackLayout>
@@ -197,14 +198,20 @@
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding SaveListCommand}"
                     Margin="2"/>
+            <!--DELETE-->
             <Button x:Name="btnDeleteSelected" Text="Delete"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding DeleteFromListCommand}"
                     CommandParameter="{Binding SelectedFitnessInfo}"/>
-            
+            <!--ADD TO LIST-->
+            <Button x:Name="btnAddToList" Text="Input"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding AddToListCommand}"
+                    Margin="2"/>
             <Button x:Name="btnResetFields" Text="Clear Feilds"
                     Clicked="BtnResetFields_Clicked"/>
         </StackLayout>
+  
     </Grid>
 
 </ContentPage>

@@ -25,3 +25,8 @@ Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
 Newtonsoft.Json
+DnsClient
+MongoDB.Bson
+MongoDB.Driver.Core
+MongoDB.Driver
+System.Buffers

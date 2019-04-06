@@ -7,6 +7,6 @@ namespace Utils
     class MyUtilites
     {
         // Global Contant Strings
-        public const String FITNESS_OUTPUT_SAVE_FILE = "localFitnessInfo.txt";
+        public const String FITNESS_OUTPUT_SAVE_FILE = "localFitnessInfo.json";
     }
 }
