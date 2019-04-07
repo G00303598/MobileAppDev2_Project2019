@@ -1,6 +1,10 @@
-G00303598_PROJECT_19
-System.Runtime
 FormsViewGroup
+G00303598_PROJECT_19
+Newtonsoft.Json
+Plugin.CurrentActivity
+Plugin.Media
+Plugin.Permissions
+System.Runtime
 Xamarin.Android.Arch.Core.Common
 Xamarin.Android.Arch.Lifecycle.Common
 Xamarin.Android.Arch.Lifecycle.Runtime
@@ -24,9 +28,4 @@ Xamarin.Forms.Core
 Xamarin.Forms.Platform.Android
 Xamarin.Forms.Platform
 Xamarin.Forms.Xaml
-Newtonsoft.Json
-DnsClient
-MongoDB.Bson
-MongoDB.Driver.Core
-MongoDB.Driver
-System.Buffers
+netstandard

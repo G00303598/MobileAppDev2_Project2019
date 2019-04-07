@@ -84,18 +84,18 @@
     <Grid>
         <!--ROW DEFINITIONS-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!--COL DEFINITIONS-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <!-- MAIN TITLE -->
-        <Label Text="Fitness App - Change This Title" HorizontalOptions="Center"
+        <Label Text="Display Up or Down Weight here" HorizontalOptions="Center"
                Margin="0,5" Grid.Row="0" Grid.Column="0"/>
         
         <!-- DISPLAY PREVIOUS ENTRIES -->
@@ -202,10 +202,19 @@
                     Command="{Binding DeleteFromListCommand}"
                     CommandParameter="{Binding SelectedFitnessInfo}"/>
 
-            <Button x:Name="btnAddToList" Text="Create new entry"
+            <Button x:Name="btnCreateNewEntry" Text="Create new entry"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding AddToListCommand}"
-                    CommandParameter="{Binding SelectedFitnessInfo}"/>
+                    CommandParameter="{Binding SelectedFitnessInfo}"
+                    Clicked="BtnResetFields_Clicked"/>
+
+            <Button x:Name="btnTakePhoto" Text="Take a photo"
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="BtnTakePhoto_Clicked"/>
+
+            <Image x:Name="MainImage"/>
+            <Label x:Name="PathLabel"
+                   FontSize="14"/>
 
 
             <Button x:Name="btnResetFields" Text="Clear Feilds"

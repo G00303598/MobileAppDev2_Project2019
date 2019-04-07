@@ -41,7 +41,7 @@ namespace G00303598_PROJECT_19
         public ICommand ReadListCommand { get; private set; }
         public ICommand SaveListCommand { get; private set; }
         public ICommand DeleteFromListCommand { get; private set; }
-        // TODO: CLEAR + INSERT
+        public ICommand ClearUserInputCommand { get; private set; }
         public ICommand AddToListCommand { get; private set; }
         #endregion
 
@@ -58,6 +58,7 @@ namespace G00303598_PROJECT_19
             AddToListCommand = new Command<FitnessInfoViewModel>(AddToList);
             SaveListCommand = new Command(SaveList);
             DeleteFromListCommand = new Command<FitnessInfoViewModel>(DeleteOneEntry);
+            ClearUserInputCommand = new Command(ClearUserInput);
         }
 
         // Methods
@@ -75,8 +76,16 @@ namespace G00303598_PROJECT_19
         public void AddToList(FitnessInfoViewModel item)
         {
             // add an entry to the list
-            FitnessInfoViewModel fi = new FitnessInfoViewModel();
-            fitnessInfoList.Add(fi);
+            FitnessInfoViewModel fivm = new FitnessInfoViewModel();
+            fivm.DateToStore = DateTime.Now;
+            fitnessInfoList.Add(fivm);
+        }
+
+        public void ClearUserInput()
+        {
+            FitnessInfoViewModel fivm = new FitnessInfoViewModel();
+            fivm.DateToStore = DateTime.Now.ToLocalTime();
+            
         }
 
         public void DeleteOneEntry(FitnessInfoViewModel item)

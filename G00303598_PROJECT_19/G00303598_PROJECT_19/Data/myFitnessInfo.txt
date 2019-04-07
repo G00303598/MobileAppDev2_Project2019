@@ -1,6 +1,6 @@
 ﻿[  
    {  
-	  "DateToStore":"31/03/2019",
+	  "DateToStore":"07/04/2019",
       "CurrentWeight":"69.0",
       "PreviousWeight":"68.9",
       "GoalWeight":"72.5",
@@ -11,7 +11,7 @@
       "Comment":"Today I did some stuff"
    },
    {  
-      "DateToStore":"01/04/2019",
+      "DateToStore":"07/04/2019",
       "CurrentWeight":"68.0",
       "PreviousWeight":"69.0",
       "GoalWeight":"72.5",
@@ -22,7 +22,7 @@
       "Comment":"Today I did some stuff again"
    },
    {  
-      "DateToStore":"02/04/2019",
+      "DateToStore":"07/04/2019",
       "CurrentWeight":"69.5",
       "PreviousWeight":"68.9",
       "GoalWeight":"72.5",

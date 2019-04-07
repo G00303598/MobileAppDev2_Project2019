@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -12,8 +13,8 @@ namespace G00303598_PROJECT_19
     public class FitnessInfoViewModel : BaseViewModel
     {
         #region Accessors + Mutators + Member variables
-        private string _dateToStore;
-        public string DateToStore
+        private DateTime _dateToStore;
+        public DateTime DateToStore
         {
             get { return _dateToStore; }
             set { SetValue(ref _dateToStore, value); }
@@ -117,8 +118,14 @@ namespace G00303598_PROJECT_19
                     fileData = reader.ReadToEnd(); // Reads everything out from file
                 }
             }
+
+            /* Using this code for formatting the date to be
+             * reasd properly by the JsonConverter 
+             */
+            var format = "dd/MM/yyyy"; // datetime format
+            var dateTimeConverter = new IsoDateTimeConverter { DateTimeFormat = format };
             //deserialise line here
-            list = JsonConvert.DeserializeObject<ObservableCollection<FitnessInfoViewModel>>(fileData);
+            list = JsonConvert.DeserializeObject<ObservableCollection<FitnessInfoViewModel>>(fileData, dateTimeConverter);
 
             return list;
         }

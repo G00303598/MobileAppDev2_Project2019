@@ -13,7 +13,7 @@ namespace G00303598_PROJECT_19
     public class FitnessInfo : BaseViewModel
     {
         #region Properties 
-        public string DateToStore { get; set; }
+        public DateTime DateToStore { get; set; }
         public double CurrentWeight { get; set; }
         public double PreviousWeight { get; set; }
         public double GoalWeight { get; set; }
@@ -31,7 +31,7 @@ namespace G00303598_PROJECT_19
 
         }
 
-        public FitnessInfo(string dateToStore, double currentWeight, double previousWeight, double goalWeight, double caloriesIn, double caloriesInGoal, double waterDrank, double distanceRan, string comment)
+        public FitnessInfo(DateTime dateToStore, double currentWeight, double previousWeight, double goalWeight, double caloriesIn, double caloriesInGoal, double waterDrank, double distanceRan, string comment)
         {
             DateToStore = dateToStore;
             CurrentWeight = currentWeight;
