@@ -34,7 +34,6 @@ namespace G00303598_PROJECT_19
 
         private void BtnResetFields_Clicked(object sender, EventArgs e)
         {
-            entDate.Text = "";
             entCurrentWeight.Text = "";
             entPreviousWeight.Text = "";
             entGoalWeight.Text = "";

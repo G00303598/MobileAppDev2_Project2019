@@ -69,6 +69,7 @@ namespace G00303598_PROJECT_19
 
         public void SaveList()
         {
+            FitnessInfoViewModel fi = new FitnessInfoViewModel();
             // Writing obervable collection to file
             FitnessInfoViewModel.SaveLocaFitnessData(fitnessInfoList);
         }

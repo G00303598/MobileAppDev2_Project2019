@@ -16,6 +16,7 @@ namespace G00303598_PROJECT_19
         public DateTime DateToStore { get; set; }
         public double CurrentWeight { get; set; }
         public double PreviousWeight { get; set; }
+        public double WeightDiff { get; set; }
         public double GoalWeight { get; set; }
         public double CaloriesIn { get; set; }
         public double CaloriesInGoal { get; set; }

@@ -16,10 +16,9 @@ namespace G00303598_PROJECT_19
             MainPage = new NavigationPage(new MainPage());
         }
 
-        protected override async void OnStart()
+        protected override void OnStart()
         {
             // Handle when your app starts
-            await CrossMedia.Current.Initialize();
         }
 
         protected override void OnSleep()
@@ -30,6 +29,7 @@ namespace G00303598_PROJECT_19
         protected override void OnResume()
         {
             // Handle when your app resumes
+
         }
     }
 }

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "ff9cfe2aa431b803774c1d82fe7da325baa22a67"
+    "signature": "365508cf05389fad3a513a311146529450f31cca"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,7 +12,7 @@
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.1",
           "Xam.Plugin.Media": "4.0.1.5",
-          "Xamarin.Forms": "3.4.0.1008975"
+          "Xamarin.Forms": "3.6.0.293080"
         },
         "runtime": {
           "G00303598_PROJECT_19.dll": {}
@@ -51,7 +51,7 @@
           }
         }
       },
-      "Xamarin.Forms/3.4.0.1008975": {
+      "Xamarin.Forms/3.6.0.293080": {
         "runtime": {
           "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
             "assemblyVersion": "2.0.0.0",
@@ -110,12 +110,12 @@
       "path": "xam.plugin.media/4.0.1.5",
       "hashPath": "xam.plugin.media.4.0.1.5.nupkg.sha512"
     },
-    "Xamarin.Forms/3.4.0.1008975": {
+    "Xamarin.Forms/3.6.0.293080": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-036/h8HtzRFgTrfhY57IeHoYRsPTO2XTA6uUFdmZzw2QR1sdszfofhI9HrCJTRx6fCzmjPg5Cxk5chYrjKarNw==",
-      "path": "xamarin.forms/3.4.0.1008975",
-      "hashPath": "xamarin.forms.3.4.0.1008975.nupkg.sha512"
+      "sha512": "sha512-o7GH+huLZMGlBxFCFAV5g+P3xoYoXFPeGrZ+AI8ezt2Gey/ZeZjSlf3nR3DzZKClVsCTvJS8Z5rVlC1dexSv+A==",
+      "path": "xamarin.forms/3.6.0.293080",
+      "hashPath": "xamarin.forms.3.6.0.293080.nupkg.sha512"
     }
   }
 }

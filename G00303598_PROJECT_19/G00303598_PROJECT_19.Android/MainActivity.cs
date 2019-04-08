@@ -9,6 +9,7 @@ using Android.OS;
 using Plugin.Media;
 using Android.Support.V4.Content;
 using Android.Support.V4.App;
+using Plugin.CurrentActivity;
 
 namespace G00303598_PROJECT_19.Droid
 {
@@ -34,5 +35,6 @@ namespace G00303598_PROJECT_19.Droid
         {
             Plugin.Permissions.PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
     }
 }

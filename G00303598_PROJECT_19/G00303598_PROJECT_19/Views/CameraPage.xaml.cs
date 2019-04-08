@@ -24,6 +24,7 @@ namespace G00303598_PROJECT_19.Views
             // https://github.com/jamesmontemagno/MediaPlugin
 
             await CrossMedia.Current.Initialize();
+            
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
@@ -33,8 +34,10 @@ namespace G00303598_PROJECT_19.Views
 
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
-                Directory = "Sample",
-                Name = "test.jpg"
+                // Specify directory here
+                // Directory = "Sample",
+                // Name = "test.jpg"
+                SaveToAlbum = true
             });
 
             if (file == null)
@@ -45,6 +48,7 @@ namespace G00303598_PROJECT_19.Views
             MainImage.Source = ImageSource.FromStream(() =>
             {
                 var stream = file.GetStream();
+                file.Dispose();
                 return stream;
             });
 

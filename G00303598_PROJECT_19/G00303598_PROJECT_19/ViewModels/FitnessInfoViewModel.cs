@@ -33,6 +33,13 @@ namespace G00303598_PROJECT_19
             set { SetValue(ref _previousWeight, value); }
         }
 
+        private double _weightDiff;
+        public double WeightDiff
+        {
+            get { return _weightDiff; }
+            set { SetValue(ref _weightDiff, value); }
+        }
+
         private double _goalWeight;
         public double GoalWeight
         {
@@ -152,5 +159,19 @@ namespace G00303598_PROJECT_19
             }
         }
         #endregion
+
+        // Fixing this to work for difference, left off here with current tabs open
+        // write specific methods, rather than generic
+        /*
+        public static double FindWeightDifferenceBetween()
+        {
+            MyUtilites utils = new MyUtilites();
+
+            // double difference = utils.FindDifferenceBetween(, compareWith);
+
+            return difference;
+        }
+        */
+
     }
 }

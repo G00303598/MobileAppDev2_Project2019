@@ -39,157 +39,168 @@
             </ViewCell>
         </DataTemplate>
     </ContentPage.Resources>
-    
-    <!-- MAIN GRID -->
-    <Grid>
-        <!--ROW DEFINITIONS-->
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <!--COL DEFINITIONS-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        
-        <!-- MAIN TITLE -->
-        <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Display Up or Down Weight here" HorizontalOptions="Center"
-               Margin="0,5" Grid.Row="0" Grid.Column="0"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <!--TO: CAMERA PAGE-->
-                <Button x:Name="btnTakePhoto" Text="Take a photo"
-                    Style="{StaticResource ButtonStyle}"
-                    Clicked="ToCameraPage"/>
-            </StackLayout>           
-        </StackLayout>
-        
-        
-        <!-- DISPLAY PREVIOUS ENTRIES -->
-        <ListView Margin="3,3,3,0"
-                  ItemsSource="{Binding FitnessInfoList, Mode=TwoWay}"
-                  SelectedItem="{Binding SelectedFitnessInfo, Mode=TwoWay}"
-                  Grid.Row="1"
-                  Grid.Column="0"
-                  ItemTemplate="{StaticResource FitnessInfoListTemplate}"
-                  HorizontalOptions="Center"/>
-        
-        <!--ENTRY LAYOUT-->
-        <StackLayout Grid.Row="2" Grid.Column="0"
-                     Margin="10" BindingContext="{Binding SelectedFitnessInfo}">
 
-            <!--EDITABLE-->
-            <StackLayout x:Name="slEditable">
-                <!--DATE-->
+    <ScrollView>
+        <!-- MAIN GRID -->
+        <Grid HeightRequest="900">
+            <!--ROW DEFINITIONS-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <!--COL DEFINITIONS-->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+        
+            <!-- MAIN TITLE -->
+            <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Date: "/>
-                    <Entry x:Name="entDate"
-                           Text="{Binding Path = DateToStore}"
-                           HorizontalOptions="FillAndExpand"
-                           Style="{StaticResource EntryStyle}"/>
+                    <Label Text="{Binding WeightDiff}"/>
                 </StackLayout>
-                <!--CURRENTWEIGHT-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Current Weight: " />
-                    <Entry x:Name="entCurrentWeight" 
-                           Text="{Binding Path= CurrentWeight}"
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Display Up or Down Weight here" HorizontalOptions="Center"
+                   Margin="0,5" Grid.Row="0" Grid.Column="0"/>
                 </StackLayout>
-                <!--PREVIOUSWEIGHT-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Previous Weight: " />
-                    <Entry x:Name="entPreviousWeight" 
-                           Text="{Binding Path=PreviousWeight}"
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
-                <!--GOALWEIGHT-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Goal Weight: " />
-                    <Entry x:Name="entGoalWeight" 
-                           Text="{Binding Path=GoalWeight}"
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
-                <!--CALORIESIN-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Calories In: " />
-                    <Entry x:Name="entCaloriesIn" 
-                           Text="{Binding Path=CaloriesIn}"
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
-                <!--CALORIESINGOAL-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Calories In Goal: " />
-                    <Entry x:Name="entCaloriesInGoal" 
-                           Text="{Binding Path=CaloriesInGoal}"
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
-                <!--WATERDRANK-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Water Drank: " />
-                    <Entry x:Name="entWaterDrank" 
-                           Text="{Binding Path=WaterDrank}"
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
-                <!--DISTANCERAN-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Distance Ran: " />
-                    <Entry x:Name="entDistanceRan" 
-                           Text="{Binding Path=DistanceRan}"
-                           
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
-                <!--COMMENT-->
-                <StackLayout Orientation="Horizontal" >
-                    <Label Text="Comment: " />
-                    <Entry x:Name="entComment" 
-                           Text="{Binding Path=Comment}"
-                           HorizontalOptions="FillAndExpand" 
-                           Style="{StaticResource EntryStyle}"/>
-                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="End">
+                    <!--TO: CAMERA PAGE-->
+                    <Button x:Name="btnTakePhoto" Text="Take a photo"
+                        Style="{StaticResource ButtonStyle}"
+                        Clicked="ToCameraPage"/>
+                </StackLayout>           
             </StackLayout>
-        </StackLayout>
-        <!--BUTTON LAYOUT-->
-        <StackLayout x:Name="slButtons" Orientation="Horizontal"
-            Grid.Row="3" Grid.Column="0" Margin="0,2">
-            <StackLayout Orientation="Horizontal">
-                <!--SAVE-->
-                <Button x:Name="btnSaveFile" Text="Save"
-                    Style="{StaticResource ButtonStyle}"
-                    Command="{Binding SaveListCommand}"
-                    CommandParameter="{Binding SelectedFitnessInfo}"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <!--DELETE-->
-                <Button x:Name="btnDeleteSelected" Text="Delete"
-                    Style="{StaticResource ButtonStyle}"
-                    Command="{Binding DeleteFromListCommand}"
-                    CommandParameter="{Binding SelectedFitnessInfo}"/>
+        
+        
+            <!-- DISPLAY PREVIOUS ENTRIES -->
+            <ListView Margin="3,3,3,0"
+                      ItemsSource="{Binding FitnessInfoList, Mode=TwoWay}"
+                      SelectedItem="{Binding SelectedFitnessInfo, Mode=TwoWay}"
+                      Grid.Row="1"
+                      Grid.Column="0"
+                      ItemTemplate="{StaticResource FitnessInfoListTemplate}"
+                      HorizontalOptions="Center"/>
+        
+            <!--ENTRY LAYOUT-->
+            <StackLayout Grid.Row="2" Grid.Column="0"
+                         Margin="10" BindingContext="{Binding SelectedFitnessInfo}">
 
+                <!--NON EDITABLE-->
+                <StackLayout x:Name="slNonEditable">
+                    <!--DATE-->
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Date: "/>
+                        <Label x:Name="entDate"
+                               Text="{Binding Path = DateToStore}"
+                               HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+                <!--EDITABLE-->
+                <StackLayout x:Name="slEditable">
+                    <!--CURRENTWEIGHT-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Current Weight: " />
+                        <Entry x:Name="entCurrentWeight" 
+                               Text="{Binding Path= CurrentWeight}"
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <!--PREVIOUSWEIGHT-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Previous Weight: " />
+                        <Entry x:Name="entPreviousWeight" 
+                               Text="{Binding Path=PreviousWeight}"
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <!--GOALWEIGHT-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Goal Weight: " />
+                        <Entry x:Name="entGoalWeight" 
+                               Text="{Binding Path=GoalWeight}"
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <!--CALORIESIN-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Calories In: " />
+                        <Entry x:Name="entCaloriesIn" 
+                               Text="{Binding Path=CaloriesIn}"
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <!--CALORIESINGOAL-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Calories In Goal: " />
+                        <Entry x:Name="entCaloriesInGoal" 
+                               Text="{Binding Path=CaloriesInGoal}"
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <!--WATERDRANK-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Water Drank: " />
+                        <Entry x:Name="entWaterDrank" 
+                               Text="{Binding Path=WaterDrank}"
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <!--DISTANCERAN-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Distance Ran: " />
+                        <Entry x:Name="entDistanceRan" 
+                               Text="{Binding Path=DistanceRan}"
+                           
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <!--COMMENT-->
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Comment: " />
+                        <Entry x:Name="entComment" 
+                               Text="{Binding Path=Comment}"
+                               HorizontalOptions="FillAndExpand" 
+                               Style="{StaticResource EntryStyle}"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <!--CLEAR FIELDS-->
+                        <Button x:Name="btnResetFields" Text="Clear Feilds"
+                                Clicked="BtnResetFields_Clicked"/>
+                    </StackLayout>
+                </StackLayout>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <!--NEW ENTRY-->
-                <Button x:Name="btnCreateNewEntry" Text="Create new entry"
-                    Style="{StaticResource ButtonStyle}"
-                    Command="{Binding AddToListCommand}"
-                    CommandParameter="{Binding SelectedFitnessInfo}"
-                    Clicked="BtnResetFields_Clicked"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <!--CLEAR FIELDS-->
-                <Button x:Name="btnResetFields" Text="Clear Feilds"
-                    Clicked="BtnResetFields_Clicked"/>
-            </StackLayout>         
-        </StackLayout> 
-    </Grid>
+            
+            <!--BUTTON LAYOUT-->
+            <StackLayout x:Name="slButtons" Orientation="Horizontal"
+                Grid.Row="3" Grid.Column="0" Margin="0,2">
+                <StackLayout Orientation="Horizontal">
+                    <!--SAVE-->
+                    <Button x:Name="btnSaveFile" Text="Save"
+                        Style="{StaticResource ButtonStyle}"
+                        Command="{Binding SaveListCommand}"
+                        CommandParameter="{Binding SelectedFitnessInfo}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <!--DELETE-->
+                    <Button x:Name="btnDeleteSelected" Text="Delete"
+                        Style="{StaticResource ButtonStyle}"
+                        Command="{Binding DeleteFromListCommand}"
+                        CommandParameter="{Binding SelectedFitnessInfo}"/>
+
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <!--NEW ENTRY-->
+                    <Button x:Name="btnCreateNewEntry" Text="Create new entry"
+                        Style="{StaticResource ButtonStyle}"
+                        Command="{Binding AddToListCommand}"
+                        CommandParameter="{Binding SelectedFitnessInfo}"
+                        Clicked="BtnResetFields_Clicked"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    
+                </StackLayout>         
+            </StackLayout> 
+        </Grid>
+    </ScrollView>
 </ContentPage>
