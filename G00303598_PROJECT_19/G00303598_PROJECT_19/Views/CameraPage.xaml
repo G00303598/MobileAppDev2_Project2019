@@ -4,9 +4,26 @@
              x:Class="G00303598_PROJECT_19.Views.CameraPage">
     <ContentPage.Content>
         <StackLayout>
+            <!--TAKE A PHOTO-->
             <Button x:Name="btnTakePhoto" Text="Take a photo"
                     Clicked="BtnTakePhoto_Clicked"/>
-            <Image x:Name="MainImage"/>
+            
+            <!--PICK A PHOTO-->
+            <Button x:Name="btnPickPhoto" Text="Pick a photo"
+                    Clicked="BtnPickPhoto_Clicked"/>
+            
+            <!--TAKE A VIDEO-->
+            <Button x:Name="btnTakeVideo" Text="Take a video"
+                    Clicked="BtnTakeVideo_Clicked"/>
+
+            <!--PICK A VIDEO-->
+            <Button x:Name="btnPickVideo" Text="Pick a video"
+                    Clicked="BtnPickVideo_Clicked"/>
+
+            <!--VIEW IMAGE/VIDEO-->
+            <Image x:Name="MainImage" HeightRequest="300" WidthRequest="300"/>
+            
+            <!--PATH OF STORED IMAGE/VIDEO-->
             <Label x:Name="PathLabel"
                    FontSize="14"/>
         </StackLayout>

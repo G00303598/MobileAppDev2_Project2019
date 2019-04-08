@@ -3,10 +3,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="G00303598_PROJECT_19.Views.FitnessDetailsPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Grid.Row="2" Grid.Column="0"
+                         Margin="10">
+
+            <!--EDITABLE-->
+            <StackLayout x:Name="slEditable">
+                <!--CURRENTWEIGHT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Current Weight: " />
+                    <Label x:Name="entCurrentWeight" 
+                               Text="{Binding Path= CurrentWeight}"
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--PREVIOUSWEIGHT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Previous Weight: " />
+                    <Label x:Name="entPreviousWeight" 
+                               Text="{Binding Path=PreviousWeight}"
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--GOALWEIGHT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Goal Weight: " />
+                    <Label x:Name="entGoalWeight" 
+                               Text="{Binding Path=GoalWeight}"
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--CALORIESIN-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Calories In: " />
+                    <Label x:Name="entCaloriesIn" 
+                               Text="{Binding Path=CaloriesIn}"
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--CALORIESINGOAL-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Calories In Goal: " />
+                    <Label x:Name="entCaloriesInGoal" 
+                               Text="{Binding Path=CaloriesInGoal}"
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--WATERDRANK-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Water Drank: " />
+                    <Label x:Name="entWaterDrank" 
+                               Text="{Binding Path=WaterDrank}"
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--DISTANCERAN-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Distance Ran: " />
+                    <Label x:Name="entDistanceRan" 
+                               Text="{Binding Path=DistanceRan}"                           
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                <!--COMMENT-->
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Comment: " />
+                    <Label x:Name="entComment" 
+                               Text="{Binding Path=Comment}"
+                               HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

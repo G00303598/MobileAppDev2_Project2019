@@ -11,10 +11,18 @@
             <Setter Property="FontSize" Value="Default"/>
             <Setter Property="TextColor" Value="Black"/>
         </Style>
-        <!--BUTTON STYLE May not use-->
+        <!--BUTTON STYLE-->
         <Style x:Key="ButtonStyle" TargetType="Button">
             <Setter Property="CornerRadius" Value="4"/>
             <Setter Property="BackgroundColor" Value="LightBlue"/>
+        </Style>
+        <Style x:Key="ButtonDeleteStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BackgroundColor" Value="Red"/>
+        </Style>
+        <Style x:Key="ButtonSaveStyle" TargetType="Button">
+            <Setter Property="CornerRadius" Value="4"/>
+            <Setter Property="BackgroundColor" Value="Green"/>
         </Style>
         
         <!--DATA TEMPLATES-->
@@ -42,12 +50,12 @@
 
     <ScrollView>
         <!-- MAIN GRID -->
-        <Grid HeightRequest="900">
+        <Grid HeightRequest="1000">
             <!--ROW DEFINITIONS-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <!--COL DEFINITIONS-->
@@ -79,6 +87,7 @@
                       SelectedItem="{Binding SelectedFitnessInfo, Mode=TwoWay}"
                       Grid.Row="1"
                       Grid.Column="0"
+                      ItemSelected="ListViewOneEntrySelected"
                       ItemTemplate="{StaticResource FitnessInfoListTemplate}"
                       HorizontalOptions="Center"/>
         
@@ -175,21 +184,6 @@
             <StackLayout x:Name="slButtons" Orientation="Horizontal"
                 Grid.Row="3" Grid.Column="0" Margin="0,2">
                 <StackLayout Orientation="Horizontal">
-                    <!--SAVE-->
-                    <Button x:Name="btnSaveFile" Text="Save"
-                        Style="{StaticResource ButtonStyle}"
-                        Command="{Binding SaveListCommand}"
-                        CommandParameter="{Binding SelectedFitnessInfo}"/>
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
-                    <!--DELETE-->
-                    <Button x:Name="btnDeleteSelected" Text="Delete"
-                        Style="{StaticResource ButtonStyle}"
-                        Command="{Binding DeleteFromListCommand}"
-                        CommandParameter="{Binding SelectedFitnessInfo}"/>
-
-                </StackLayout>
-                <StackLayout Orientation="Horizontal">
                     <!--NEW ENTRY-->
                     <Button x:Name="btnCreateNewEntry" Text="Create new entry"
                         Style="{StaticResource ButtonStyle}"
@@ -197,9 +191,23 @@
                         CommandParameter="{Binding SelectedFitnessInfo}"
                         Clicked="BtnResetFields_Clicked"/>
                 </StackLayout>
+                
                 <StackLayout Orientation="Horizontal">
-                    
-                </StackLayout>         
+                    <!--SAVE-->
+                    <Button x:Name="btnSaveFile" Text="Save"
+                        Style="{StaticResource ButtonSaveStyle}"
+                        Command="{Binding SaveListCommand}"
+                        CommandParameter="{Binding SelectedFitnessInfo}"/>
+                </StackLayout>
+                
+                <StackLayout Orientation="Horizontal">
+                    <!--DELETE-->
+                    <Button x:Name="btnDeleteSelected" Text="Delete"
+                        Style="{StaticResource ButtonDeleteStyle}"
+                        Command="{Binding DeleteFromListCommand}"
+                        CommandParameter="{Binding SelectedFitnessInfo}"/>
+                </StackLayout>
+                
             </StackLayout> 
         </Grid>
     </ScrollView>
