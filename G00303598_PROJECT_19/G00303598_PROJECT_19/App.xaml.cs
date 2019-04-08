@@ -12,7 +12,8 @@ namespace G00303598_PROJECT_19
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            //Navigation
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override async void OnStart()

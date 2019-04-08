@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="G00303598_PROJECT_19.Views.CameraPage">
+    <ContentPage.Content>
+        <StackLayout>
+            
+            <!--TODO: Move this to seperate page-->
+            <Button x:Name="btnTakePhoto" Text="Take a photo"
+                    Clicked="BtnTakePhoto_Clicked"/>
+            <Image x:Name="MainImage"/>
+            <Label x:Name="PathLabel"
+                   FontSize="14"/>
+            <!--..................................-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

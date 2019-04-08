@@ -34,47 +34,7 @@
                     <StackLayout Orientation="Horizontal" Margin="2,1">
                         <Label Text="Date: "/>
                         <Label Text="{Binding Path= DateToStore}"/>
-                    </StackLayout>
-                    <!--CURRENTWEIGHT-->
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="Current Weight: "/>
-                        <Label Text="{Binding Path=CurrentWeight}"/>
-                    </StackLayout>
-                    <!--PREVIOUSWEIGHT-->             
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="Previous Weight: "/>
-                        <Label Text="{Binding Path=PreviousWeight}"/>
-                    </StackLayout>
-                    <!--GOALWEIGHT-->
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="Goal Weight: "/>
-                        <Label Text="{Binding Path=GoalWeight}"/>
-                    </StackLayout>
-                    <!--CALORIESIN-->
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="Calories In: "/>
-                        <Label Text="{Binding Path=CaloriesIn}"/>
-                    </StackLayout>
-                    <!--CALORIESINGOAL-->
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="Calories In GOAL: "/>
-                        <Label Text="{Binding Path=CaloriesInGoal}"/>
-                    </StackLayout>
-                    <!--WATERDRANK-->
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="water drank: "/>
-                        <Label Text="{Binding Path=WaterDrank}"/>
-                    </StackLayout>
-                    <!--DISTANCERAN-->
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="Distance Ran: "/>
-                        <Label Text="{Binding Path=DistanceRan}"/>
-                    </StackLayout>
-                    <!--COMMENT-->
-                    <StackLayout Orientation="Horizontal" Margin="2,1">
-                        <Label Text="Comment about day: "/>
-                        <Label Text="{Binding Path=Comment}"/>
-                    </StackLayout>
+                    </StackLayout>                   
                 </StackLayout>
             </ViewCell>
         </DataTemplate>
@@ -84,10 +44,10 @@
     <Grid>
         <!--ROW DEFINITIONS-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <!--COL DEFINITIONS-->
         <Grid.ColumnDefinitions>
@@ -95,8 +55,19 @@
         </Grid.ColumnDefinitions>
         
         <!-- MAIN TITLE -->
-        <Label Text="Display Up or Down Weight here" HorizontalOptions="Center"
+        <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Display Up or Down Weight here" HorizontalOptions="Center"
                Margin="0,5" Grid.Row="0" Grid.Column="0"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <!--TO: CAMERA PAGE-->
+                <Button x:Name="btnTakePhoto" Text="Take a photo"
+                    Style="{StaticResource ButtonStyle}"
+                    Clicked="ToCameraPage"/>
+            </StackLayout>           
+        </StackLayout>
+        
         
         <!-- DISPLAY PREVIOUS ENTRIES -->
         <ListView Margin="3,3,3,0"
@@ -191,36 +162,34 @@
         <!--BUTTON LAYOUT-->
         <StackLayout x:Name="slButtons" Orientation="Horizontal"
             Grid.Row="3" Grid.Column="0" Margin="0,2">
-            <!--SAVE-->
-            <Button x:Name="btnSaveFile" Text="Save"
+            <StackLayout Orientation="Horizontal">
+                <!--SAVE-->
+                <Button x:Name="btnSaveFile" Text="Save"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding SaveListCommand}"
                     CommandParameter="{Binding SelectedFitnessInfo}"/>
-            <!--DELETE-->
-            <Button x:Name="btnDeleteSelected" Text="Delete"
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <!--DELETE-->
+                <Button x:Name="btnDeleteSelected" Text="Delete"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding DeleteFromListCommand}"
                     CommandParameter="{Binding SelectedFitnessInfo}"/>
 
-            <Button x:Name="btnCreateNewEntry" Text="Create new entry"
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <!--NEW ENTRY-->
+                <Button x:Name="btnCreateNewEntry" Text="Create new entry"
                     Style="{StaticResource ButtonStyle}"
                     Command="{Binding AddToListCommand}"
                     CommandParameter="{Binding SelectedFitnessInfo}"
                     Clicked="BtnResetFields_Clicked"/>
-
-            <Button x:Name="btnTakePhoto" Text="Take a photo"
-                    Style="{StaticResource ButtonStyle}"
-                    Clicked="BtnTakePhoto_Clicked"/>
-
-            <Image x:Name="MainImage"/>
-            <Label x:Name="PathLabel"
-                   FontSize="14"/>
-
-
-            <Button x:Name="btnResetFields" Text="Clear Feilds"
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <!--CLEAR FIELDS-->
+                <Button x:Name="btnResetFields" Text="Clear Feilds"
                     Clicked="BtnResetFields_Clicked"/>
-        </StackLayout>
-  
+            </StackLayout>         
+        </StackLayout> 
     </Grid>
-
 </ContentPage>

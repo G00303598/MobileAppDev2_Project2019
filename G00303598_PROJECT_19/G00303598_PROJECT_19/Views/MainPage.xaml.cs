@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using System.ComponentModel;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using G00303598_PROJECT_19.Views;
 
 namespace G00303598_PROJECT_19
 {
@@ -50,36 +51,9 @@ namespace G00303598_PROJECT_19
             (BindingContext as MainPageViewModel).SaveListCommand.Execute(fitnessEntry);
         }
 
-        private async void BtnTakePhoto_Clicked(object sender, EventArgs e)
+        private void ToCameraPage(object sender, EventArgs e)
         {
-            // Camera functionality
-            // https://github.com/jamesmontemagno/MediaPlugin
-
-            await CrossMedia.Current.Initialize();
-
-            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
-            {
-                DisplayAlert("No Camera", ":( No camera available.", "OK");
-                return;
-            }
-
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-            {
-                Directory = "Sample",
-                Name = "test.jpg"
-            });
-
-            if (file == null)
-                return;
-
-            await DisplayAlert("File Location", file.Path, "OK");
-
-            MainImage.Source = ImageSource.FromStream(() =>
-            {
-                var stream = file.GetStream();
-                return stream;
-            });
-
-        }
+            Navigation.PushAsync(new CameraPage());
+        }       
     }
 }
