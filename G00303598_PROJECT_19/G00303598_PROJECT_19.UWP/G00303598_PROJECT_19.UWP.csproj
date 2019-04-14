@@ -133,6 +133,8 @@
     <Content Include="Images\CamAdd.png" />
     <Content Include="Images\delete.png" />
     <Content Include="Images\folder_open.png" />
+    <Content Include="Images\new_pic.png" />
+    <Content Include="Images\save.png" />
     <Content Include="Images\to_images.png" />
     <Content Include="Images\video_add.png" />
     <Content Include="Images\video_folder_add.png" />

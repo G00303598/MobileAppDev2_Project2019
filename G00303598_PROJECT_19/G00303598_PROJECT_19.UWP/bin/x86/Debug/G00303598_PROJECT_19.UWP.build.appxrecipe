@@ -181,6 +181,12 @@
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\folder_open.png">
       <PackagePath>Images\folder_open.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\new.png">
+      <PackagePath>Images\new.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\save.png">
+      <PackagePath>Images\save.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\to_images.png">
       <PackagePath>Images\to_images.png</PackagePath>
     </AppxPackagedFile>
