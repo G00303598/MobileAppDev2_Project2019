@@ -28,5 +28,11 @@ Assets\Wide310x150Logo.scale-400.png
 App.xbf
 G00303598_PROJECT_19.UWP.xr.xml
 MainPage.xbf
+Images\CamAdd.png
+Images\delete.png
+Images\folder_open.png
+Images\to_images.png
+Images\video_add.png
+Images\video_folder_add.png
 Properties\Default.rd.xml
 WinMetadata\Windows.winmd

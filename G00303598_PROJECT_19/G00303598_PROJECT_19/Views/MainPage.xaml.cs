@@ -30,7 +30,7 @@ namespace G00303598_PROJECT_19
 
         public async void ListViewOneEntrySelected(object sender, SelectedItemChangedEventArgs e)
         {
-            // await (BindingContext as MainPageViewModel).SelectOneItemAsync(e.SelectedItem as FitnessInfoViewModel);
+            await (BindingContext as MainPageViewModel).SelectOneItemAsync(e.SelectedItem as FitnessInfoViewModel);
         }
 
         private void BtnResetFields_Clicked(object sender, EventArgs e)

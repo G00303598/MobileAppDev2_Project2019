@@ -21,20 +21,8 @@ namespace G00303598_PROJECT_19.Views
             InitializeComponent();
             _fitnessInfo = fi;
 
-            this.BindingContext = new MainPageViewModel(new PageService());
-
             // Set title on page
             this.Title = _fitnessInfo.DateToStore.ToString();
-
-            // Set data for page
-            this.entCurrentWeight.Text = _fitnessInfo.CurrentWeight.ToString();
-            this.entPreviousWeight.Text = _fitnessInfo.PreviousWeight.ToString();
-            this.entGoalWeight.Text = _fitnessInfo.GoalWeight.ToString();
-            this.entCaloriesIn.Text = _fitnessInfo.CaloriesIn.ToString();
-            this.entCaloriesInGoal.Text = _fitnessInfo.CaloriesInGoal.ToString();
-            this.entWaterDrank.Text = _fitnessInfo.WaterDrank.ToString();
-            this.entDistanceRan.Text = _fitnessInfo.DistanceRan.ToString();
-            this.entComment.Text = _fitnessInfo.Comment.ToString();
         }
     }
 }

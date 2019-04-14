@@ -82,7 +82,6 @@ namespace G00303598_PROJECT_19
             set { SetValue(ref _comment, value); }
         }
         #endregion
-
   
         #region File IO
         public static ObservableCollection<FitnessInfoViewModel> ReadLocalFitnessData()

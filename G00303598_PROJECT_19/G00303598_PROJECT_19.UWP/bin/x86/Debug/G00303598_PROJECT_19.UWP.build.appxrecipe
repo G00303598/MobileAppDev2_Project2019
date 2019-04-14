@@ -172,6 +172,24 @@
       <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\CamAdd.png">
+      <PackagePath>Images\CamAdd.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\delete.png">
+      <PackagePath>Images\delete.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\folder_open.png">
+      <PackagePath>Images\folder_open.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\to_images.png">
+      <PackagePath>Images\to_images.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\video_add.png">
+      <PackagePath>Images\video_add.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\video_folder_add.png">
+      <PackagePath>Images\video_folder_add.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>

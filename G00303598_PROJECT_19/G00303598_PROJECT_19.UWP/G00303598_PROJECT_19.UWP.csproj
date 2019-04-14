@@ -130,6 +130,12 @@
     <Content Include="Assets\Wide310x150Logo.scale-100.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
+    <Content Include="Images\CamAdd.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\folder_open.png" />
+    <Content Include="Images\to_images.png" />
+    <Content Include="Images\video_add.png" />
+    <Content Include="Images\video_folder_add.png" />
     <Content Include="Properties\Default.rd.xml" />
   </ItemGroup>
   <ItemGroup>
