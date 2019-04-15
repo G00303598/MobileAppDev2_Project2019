@@ -175,17 +175,35 @@
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\CamAdd.png">
       <PackagePath>Images\CamAdd.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\cam_round.png">
+      <PackagePath>Images\cam_round.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\clear_fields.png">
+      <PackagePath>Images\clear_fields.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\clear_round.png">
+      <PackagePath>Images\clear_round.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\delete.png">
       <PackagePath>Images\delete.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\del_round.png">
+      <PackagePath>Images\del_round.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\folder_open.png">
       <PackagePath>Images\folder_open.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\new.png">
-      <PackagePath>Images\new.png</PackagePath>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\new_pic.png">
+      <PackagePath>Images\new_pic.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\new_round.png">
+      <PackagePath>Images\new_round.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\save.png">
       <PackagePath>Images\save.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\save_round.png">
+      <PackagePath>Images\save_round.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\G00303598_PROJECT_19\G00303598_PROJECT_19\G00303598_PROJECT_19.UWP\Images\to_images.png">
       <PackagePath>Images\to_images.png</PackagePath>

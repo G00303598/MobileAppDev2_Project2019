@@ -93,14 +93,6 @@ namespace G00303598_PROJECT_19
             fitnessInfoList.Remove(item);
             // SelectedFitnessInfo = null;
         }
-
-        // using system.threading.tasks
-        public async Task SelectOneItemAsync(FitnessInfoViewModel item)
-        {
-            if (fitnessInfoList == null)
-                return;
-            await _pageService.PushAsync(new FitnessDetailsPage(item));
-        }
         #endregion
     }
 }

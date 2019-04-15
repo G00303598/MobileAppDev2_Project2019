@@ -4303,7 +4303,19 @@ namespace G00303598_PROJECT_19.Droid
 			public const int CamAdd = 2130771970;
 			
 			// aapt resource value: 0x7F010003
-			public const int delete = 2130771971;
+			public const int cam_round = 2130771971;
+			
+			// aapt resource value: 0x7F010004
+			public const int clear_fields = 2130771972;
+			
+			// aapt resource value: 0x7F010005
+			public const int clear_round = 2130771973;
+			
+			// aapt resource value: 0x7F010006
+			public const int delete = 2130771974;
+			
+			// aapt resource value: 0x7F010007
+			public const int del_round = 2130771975;
 			
 			// aapt resource value: 0x7F090056
 			public const int design_bottom_navigation_item_background = 2131296342;
@@ -4323,8 +4335,8 @@ namespace G00303598_PROJECT_19.Droid
 			// aapt resource value: 0x7F09005B
 			public const int design_snackbar_background = 2131296347;
 			
-			// aapt resource value: 0x7F010004
-			public const int folder_open = 2130771972;
+			// aapt resource value: 0x7F010008
+			public const int folder_open = 2130771976;
 			
 			// aapt resource value: 0x7F090054
 			public const int ic_audiotrack_dark = 2131296340;
@@ -4920,8 +4932,11 @@ namespace G00303598_PROJECT_19.Droid
 			// aapt resource value: 0x7F09005C
 			public const int navigation_empty_icon = 2131296348;
 			
-			// aapt resource value: 0x7F010005
-			public const int new_pic = 2130771973;
+			// aapt resource value: 0x7F010009
+			public const int new_pic = 2130771977;
+			
+			// aapt resource value: 0x7F010010
+			public const int new_round = 2130771984;
 			
 			// aapt resource value: 0x7F090001
 			public const int notification_action_background = 2131296257;
@@ -4959,8 +4974,11 @@ namespace G00303598_PROJECT_19.Droid
 			// aapt resource value: 0x7F09000C
 			public const int notify_panel_notification_icon_bg = 2131296268;
 			
-			// aapt resource value: 0x7F010006
-			public const int save = 2130771974;
+			// aapt resource value: 0x7F010011
+			public const int save = 2130771985;
+			
+			// aapt resource value: 0x7F010012
+			public const int save_round = 2130771986;
 			
 			// aapt resource value: 0x7F090069
 			public const int tooltip_frame_dark = 2131296361;
@@ -4968,14 +4986,14 @@ namespace G00303598_PROJECT_19.Droid
 			// aapt resource value: 0x7F09006A
 			public const int tooltip_frame_light = 2131296362;
 			
-			// aapt resource value: 0x7F010007
-			public const int to_images = 2130771975;
+			// aapt resource value: 0x7F010013
+			public const int to_images = 2130771987;
 			
-			// aapt resource value: 0x7F010008
-			public const int video_add = 2130771976;
+			// aapt resource value: 0x7F010014
+			public const int video_add = 2130771988;
 			
-			// aapt resource value: 0x7F010009
-			public const int video_folder_add = 2130771977;
+			// aapt resource value: 0x7F010015
+			public const int video_folder_add = 2130771989;
 			
 			static Drawable()
 			{

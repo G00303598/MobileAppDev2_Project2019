@@ -17,7 +17,8 @@ namespace G00303598_PROJECT_19
         public MainPage()
         {
             InitializeComponent();
-            this.Title = "Fitness Info App";
+            this.Title = "My Health Tracker";
+
             // Connection to MainPageViewModel class
             this.BindingContext = new MainPageViewModel(new PageService()); // Dependency injection
         }
@@ -26,11 +27,6 @@ namespace G00303598_PROJECT_19
         {
             FitnessInfoViewModel fitnessEntry = (sender as MenuItem).CommandParameter as FitnessInfoViewModel;
             (BindingContext as MainPageViewModel).DeleteFromListCommand.Execute(fitnessEntry);
-        }
-
-        public async void ListViewOneEntrySelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            await (BindingContext as MainPageViewModel).SelectOneItemAsync(e.SelectedItem as FitnessInfoViewModel);
         }
 
         private void BtnResetFields_Clicked(object sender, EventArgs e)
