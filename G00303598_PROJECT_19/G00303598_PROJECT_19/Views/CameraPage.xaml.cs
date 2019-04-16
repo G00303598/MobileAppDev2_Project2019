@@ -20,7 +20,8 @@ namespace G00303598_PROJECT_19.Views
 		public CameraPage ()
 		{
 			InitializeComponent ();
-            this.Title = "Camera Page";
+            NavigationPage.SetHasNavigationBar(this, false);
+            // this.Title = "Camera Page";
 		}
 
         private async void BtnTakePhoto_Clicked(object sender, EventArgs e)
@@ -74,7 +75,7 @@ namespace G00303598_PROJECT_19.Views
             if (file == null)
                 return;
 
-            PathLabel.Text = "Photo path: " + file.Path;
+            // PathLabel.Text = "Photo path: " + file.Path;
 
             MainImage.Source = ImageSource.FromStream(() =>
             {
@@ -103,7 +104,7 @@ namespace G00303598_PROJECT_19.Views
             if (file == null)
                 return;
 
-            PathLabel.Text = "Photo path: " + file.Path;
+            // PathLabel.Text = "Photo path: " + file.Path;
 
             MainImage.Source = ImageSource.FromStream(() =>
             {
@@ -128,7 +129,7 @@ namespace G00303598_PROJECT_19.Views
             if (file == null)
                 return;
 
-            PathLabel.Text = "Photo path: " + file.Path;
+            // PathLabel.Text = "Photo path: " + file.Path;
 
             MainImage.Source = ImageSource.FromStream(() =>
             {
@@ -136,6 +137,11 @@ namespace G00303598_PROJECT_19.Views
                 file.Dispose();
                 return stream;
             });
+        }
+
+        private void ToMainPage(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new MainPage());
         }
     }
 }

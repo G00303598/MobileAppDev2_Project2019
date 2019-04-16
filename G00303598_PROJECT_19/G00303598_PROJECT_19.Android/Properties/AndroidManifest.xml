@@ -6,13 +6,9 @@
 	<uses-permission android:name="android.permission.RECORD_AUDIO" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<application android:label="G00303598_PROJECT_19.Android">
-    <provider android:name="android.support.v4.content.FileProvider"
-				android:authorities="${applicationId}.fileprovider"
-				android:exported="false"
-				android:grantUriPermissions="true">
-      <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-				android:resource="@xml/file_paths"></meta-data>
-    </provider>
+	<application android:label="My Health Tracker">
+		<provider android:name="android.support.v4.content.FileProvider" android:authorities="${applicationId}.fileprovider" android:exported="false" android:grantUriPermissions="true">
+			<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
+		</provider>
 	</application>
 </manifest>

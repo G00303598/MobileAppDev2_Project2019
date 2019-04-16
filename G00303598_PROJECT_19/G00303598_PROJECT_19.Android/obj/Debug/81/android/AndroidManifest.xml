@@ -9,11 +9,11 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-feature android:name="android.hardware.camera" android:required="false" />
   <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
-  <application android:label="G00303598_PROJECT_19.Android" android:debuggable="true" android:name="md5cd1d79a3a4a811437fb9eac9beb6a97e.MainApplication" android:allowBackup="true" android:icon="@mipmap/icon">
+  <application android:label="My Health Tracker" android:debuggable="true" android:name="md5cd1d79a3a4a811437fb9eac9beb6a97e.MainApplication" android:allowBackup="true" android:icon="@mipmap/icon">
     <provider android:name="android.support.v4.content.FileProvider" android:authorities="com.companyname.fileprovider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"></meta-data>
     </provider>
-    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="G00303598_PROJECT_19" android:theme="@style/MainTheme" android:name="md5cd1d79a3a4a811437fb9eac9beb6a97e.MainActivity">
+    <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="My Health Tracker" android:theme="@style/MainTheme" android:name="md5cd1d79a3a4a811437fb9eac9beb6a97e.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />

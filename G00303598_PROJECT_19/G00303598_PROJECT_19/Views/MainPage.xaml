@@ -85,14 +85,13 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             
-            <!-- MAIN TITLE -->
+            <!-- BUTTON ROW -->
             <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"
                          Padding="2,5,5,0">
                 <!--TO: CAMERA PAGE-->
                 <ImageButton x:Name="btnTakePhoto" Clicked="ToCameraPage"
                          HeightRequest="50" WidthRequest="50"
-                         BackgroundColor="Black"
-                         >
+                         BackgroundColor="Transparent">
                     <ImageButton.Source>
                         <OnPlatform x:TypeArguments="FileImageSource">
                             <On Platform = "Android" Value="cam_round.png"/>
@@ -104,10 +103,9 @@
                 <!--DELETE-->
                 <ImageButton x:Name="btnDeleteSelected"
                          HeightRequest="50" WidthRequest="50"
-                         BackgroundColor="Black"
+                         BackgroundColor="Transparent"
                          CommandParameter="{Binding SelectedFitnessInfo}"
-                         Command="{Binding DeleteFromListCommand}"
-                         >
+                         Command="{Binding DeleteFromListCommand}">
                     <ImageButton.Source>
                         <OnPlatform x:TypeArguments="FileImageSource">
                             <On Platform = "Android" Value="del_round.png"/>
@@ -119,11 +117,10 @@
                 <!--NEW ENTRY-->
                 <ImageButton x:Name="btnCreateNewEntry"
                          HeightRequest="50" WidthRequest="50"
-                         BackgroundColor="Black"
+                         BackgroundColor="Transparent"
                          Clicked="BtnResetFields_Clicked"
                          CommandParameter="{Binding SelectedFitnessInfo}"
-                         Command="{Binding CreateNewEntryCommand}"
-                         >
+                         Command="{Binding CreateNewEntryCommand}">
                     <ImageButton.Source>
                         <OnPlatform x:TypeArguments="FileImageSource">
                             <On Platform = "Android" Value="new_round.png"/>
@@ -166,7 +163,7 @@
                         <!--CURRENTWEIGHT-->
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Current Weight: " FontSize="Medium"/>
-                            <Entry x:Name="entCurrentWeight" 
+                            <Entry x:Name="entCurrentWeight" Keyboard="Numeric"
                                    Text="{Binding Path= CurrentWeight}"
                                    HorizontalOptions="FillAndExpand" 
                                    Style="{StaticResource EntryStyle}"/>
@@ -175,7 +172,7 @@
                         <!--PREVIOUSWEIGHT-->
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Previous Weight: " FontSize="Medium"/>
-                            <Entry x:Name="entPreviousWeight" 
+                            <Entry x:Name="entPreviousWeight" Keyboard="Numeric"
                                    Text="{Binding Path=PreviousWeight}"
                                    HorizontalOptions="FillAndExpand" 
                                    Style="{StaticResource EntryStyle}"/>
@@ -184,7 +181,7 @@
                         <!--GOALWEIGHT-->
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Goal Weight: " FontSize="Medium"/>
-                            <Entry x:Name="entGoalWeight" 
+                            <Entry x:Name="entGoalWeight" Keyboard="Numeric"
                                    Text="{Binding Path=GoalWeight}"
                                    HorizontalOptions="FillAndExpand" 
                                    Style="{StaticResource EntryStyle}"/>
@@ -193,7 +190,7 @@
                         <!--CALORIESIN-->
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Calories In: " FontSize="Medium"/>
-                            <Entry x:Name="entCaloriesIn" 
+                            <Entry x:Name="entCaloriesIn" Keyboard="Numeric"
                                    Text="{Binding Path=CaloriesIn}"
                                    HorizontalOptions="FillAndExpand" 
                                    Style="{StaticResource EntryStyle}"/>
@@ -202,7 +199,7 @@
                         <!--CALORIESINGOAL-->
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Calories In Goal: " FontSize="Medium"/>
-                            <Entry x:Name="entCaloriesInGoal" 
+                            <Entry x:Name="entCaloriesInGoal" Keyboard="Numeric"
                                    Text="{Binding Path=CaloriesInGoal}"
                                    HorizontalOptions="FillAndExpand" 
                                    Style="{StaticResource EntryStyle}"/>
@@ -211,7 +208,7 @@
                         <!--WATERDRANK-->
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Water Drank: " FontSize="Medium"/>
-                            <Entry x:Name="entWaterDrank" 
+                            <Entry x:Name="entWaterDrank" Keyboard="Numeric"
                                    Text="{Binding Path=WaterDrank}"
                                    HorizontalOptions="FillAndExpand" 
                                    Style="{StaticResource EntryStyle}"/>
@@ -220,7 +217,7 @@
                         <!--DISTANCERAN-->
                         <StackLayout Orientation="Horizontal" >
                             <Label Text="Distance Ran: " FontSize="Medium"/>
-                            <Entry x:Name="entDistanceRan" 
+                            <Entry x:Name="entDistanceRan" Keyboard="Numeric"
                                    Text="{Binding Path=DistanceRan}"
                            
                                    HorizontalOptions="FillAndExpand" 
@@ -239,7 +236,7 @@
                             <!--SAVE-->
                             <ImageButton x:Name="btnSaveFile"
                              HeightRequest="50" WidthRequest="50"
-                             BackgroundColor="Yellow"
+                             BackgroundColor="Transparent"
                              CommandParameter="{Binding SelectedFitnessInfo}"
                              Command="{Binding SaveListCommand}">
                                 <ImageButton.Source>
@@ -252,7 +249,7 @@
                             <!--CLEAR FIELDS-->
                             <ImageButton x:Name="btnResetFields"
                              HeightRequest="50" WidthRequest="50"
-                             BackgroundColor="Yellow"
+                             BackgroundColor="Transparent"
                              Clicked="BtnResetFields_Clicked">
                                 <ImageButton.Source>
                                     <OnPlatform x:TypeArguments="FileImageSource">

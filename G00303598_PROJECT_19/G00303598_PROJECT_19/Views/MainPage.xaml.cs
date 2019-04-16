@@ -17,10 +17,12 @@ namespace G00303598_PROJECT_19
         public MainPage()
         {
             InitializeComponent();
-            this.Title = "My Health Tracker";
+            // this.Title = "My Health Tracker";
+            NavigationPage.SetHasNavigationBar(this, false);
 
             // Connection to MainPageViewModel class
             this.BindingContext = new MainPageViewModel(new PageService()); // Dependency injection
+
         }
 
         private void DeleteContext_Clicked(object sender, EventArgs e)

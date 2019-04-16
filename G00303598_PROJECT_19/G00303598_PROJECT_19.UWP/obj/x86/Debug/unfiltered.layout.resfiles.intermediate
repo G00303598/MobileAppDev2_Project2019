@@ -28,6 +28,7 @@ Assets\Wide310x150Logo.scale-400.png
 App.xbf
 G00303598_PROJECT_19.UWP.xr.xml
 MainPage.xbf
+Images\cam_add_round.png
 Images\cam_round.png
 Images\CamAdd.png
 Images\clear_fields.png
@@ -35,6 +36,8 @@ Images\clear_round.png
 Images\del_round.png
 Images\delete.png
 Images\folder_open.png
+Images\home_round.png
+Images\image_round.png
 Images\new_pic.png
 Images\new_round.png
 Images\save.png

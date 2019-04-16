@@ -112,11 +112,9 @@ namespace G00303598_PROJECT_19
             catch (Exception) //fallback is to read the default file
             {
                 // Read defualt data
-                // TODO: Write trace file? 
                 var assembly = IntrospectionExtensions.GetTypeInfo(typeof(MainPage)).Assembly;
 
                 // Need stream of data to read from
-                // TODO: Make data folder + populate json
                 Stream stream = assembly.GetManifestResourceStream("G00303598_PROJECT_19.Data.myFitnessInfo.txt");
 
                 using (var reader = new StreamReader(stream))
