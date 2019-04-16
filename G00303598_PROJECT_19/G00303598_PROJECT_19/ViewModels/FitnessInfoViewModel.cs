@@ -88,9 +88,8 @@ namespace G00303598_PROJECT_19
         {
             ObservableCollection<FitnessInfoViewModel> list = new ObservableCollection<FitnessInfoViewModel>();
 
-            string fileData; // Using to hold data .. redundant comment
+            string fileData;
 
-            // Try and read local data first --> "localFitnessInfo.txt"
             // If first run --> read defualt: "myFitnessInfo.txt"
 
             try
@@ -156,19 +155,5 @@ namespace G00303598_PROJECT_19
             }
         }
         #endregion
-
-        // Fixing this to work for difference, left off here with current tabs open
-        // write specific methods, rather than generic
-        /*
-        public static double FindWeightDifferenceBetween()
-        {
-            MyUtilites utils = new MyUtilites();
-
-            // double difference = utils.FindDifferenceBetween(, compareWith);
-
-            return difference;
-        }
-        */
-
     }
 }

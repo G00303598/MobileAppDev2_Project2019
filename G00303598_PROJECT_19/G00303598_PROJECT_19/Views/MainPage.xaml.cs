@@ -18,7 +18,7 @@ namespace G00303598_PROJECT_19
         {
             InitializeComponent();
             // this.Title = "My Health Tracker";
-            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false); // Removes title bar
 
             // Connection to MainPageViewModel class
             this.BindingContext = new MainPageViewModel(new PageService()); // Dependency injection

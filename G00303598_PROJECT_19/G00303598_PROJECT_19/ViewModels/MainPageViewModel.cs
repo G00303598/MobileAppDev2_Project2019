@@ -91,7 +91,8 @@ namespace G00303598_PROJECT_19
         public void DeleteOneEntry(FitnessInfoViewModel item)
         {
             fitnessInfoList.Remove(item);
-            // SelectedFitnessInfo = null;
+            // Save on delete
+            FitnessInfoViewModel.SaveLocaFitnessData(fitnessInfoList);
         }
         #endregion
     }

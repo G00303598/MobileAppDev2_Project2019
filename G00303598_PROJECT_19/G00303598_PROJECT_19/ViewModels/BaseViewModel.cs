@@ -19,7 +19,6 @@ namespace G00303598_PROJECT_19
 
         // Generic method
         // Passing by reference, rather than value -- default is value
-        // For persistent change, pass by reference
         protected void SetValue<T>(ref T backingField, T value,
             [CallerMemberName] string propName = null)
         {
